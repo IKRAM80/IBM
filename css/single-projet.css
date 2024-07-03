@@ -1,0 +1,104 @@
+.single-projet{
+    display: flex;   
+    flex-wrap: wrap; 
+    justify-content: center;
+    margin: 2rem 2rem;
+    padding: 5% 1%;
+    background:  linear-gradient(146deg,  rgba(255,255,255,1)  20%, rgba(229,237,241,   1) 55%);
+    box-sizing: border-box;
+}
+.projet-header{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 1rem;
+    gap: 5%;
+}
+.left-col{
+    width: 45%;
+    padding-left: 1rem;
+}
+.projet-title{
+    
+    color:#008080;
+    font-size: calc( 3rem + 1.5vw);
+    
+}
+.projet-photo{
+    width: 50%;
+}
+
+.def-projet, .techno{
+    margin: 12vh 1.2em;
+    width: 87vw;
+}
+.row-1-, .row-2, .techno{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5%;
+    justify-content: center;
+    align-items: center;
+}
+.row-1-{
+    flex-direction: row-reverse;
+    margin-bottom: 8%;
+}
+.compo, .col-right, .contrainte{
+    width: 40vw;
+    margin-top: 5%;
+}
+.side-image{
+    width: 300px;
+    height: 360px;
+    overflow: scroll;
+    padding: 5px;
+    margin: auto;
+}
+.img-box{
+    border-radius: 10%;
+    -webkit-box-shadow: 2px 23px 31px 0px rgba(0,128,128,1);
+    -moz-box-shadow: 2px 23px 31px 0px rgba(0,128,128,1);
+    box-shadow: 2px 23px 31px 0px rgba(0,128,128,1); 
+}
+.box-text{
+    width: 125px;
+    border: aquamarine 2px solid;
+    height: 40px;
+    text-align: center;
+    background-color: #e5edf1;
+    color: #008080;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.light-box{
+    border: 3px solid #a9a9a9;
+    border-radius: 5px;
+    -webkit-box-shadow: 2px 23px 31px 0px rgba(0,128,128,1);
+    -moz-box-shadow: 2px 23px 31px 0px rgba(0,128,128,1);
+    box-shadow: 2px 23px 31px 0px rgba(0,128,128,1); 
+}
+.parag{
+    margin: 4% 5% 1%;
+    font-style: italic;
+    color: #a9a9a9;
+    font-weight: bold;
+}
+.logo-box{
+    width: 4vw;
+    height: auto;
+    
+    margin: 20px;
+    transition: all .6s ease-in-out;
+}
+.hover:hover{
+    background-color: #008080;
+    transform: rotate(360deg) scale(1.2);
+    border-radius: 50%;
+}
+
+@media all and (max-width: 650px){
+    .compo, .col-right, .contrainte, .left-col, .projet-photo{
+        width: 95%;
+    }
+}
