@@ -22,3 +22,20 @@ endif;
 add_action( 'wp_enqueue_scripts', 'chld_thm_cfg_parent_css', 10 );
 
 // END ENQUEUE PARENT ACTION
+
+function enqueue_child_theme_styles() {
+    wp_enqueue_style( 'single-projet', get_stylesheet_directory_uri() . '/css/single-projet.css' );
+}
+add_action( 'wp_enqueue_scripts', 'enqueue_child_theme_styles' );
+
+// UTILISER LA SINGLE-PROJET.PHP POUR LE CUSTOM POST TYPE: 'realisation'
+function custom_post_type_template($single_template) {
+    global $post;
+
+    if ($post->post_type == 'realisation') {
+        $single_template = dirname(__FILE__) . '/template/single-projet.php';
+    }
+
+    return $single_template;
+}
+add_filter('single_template', 'custom_post_type_template');
