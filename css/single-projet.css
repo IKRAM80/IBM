@@ -32,8 +32,8 @@
     display: flex;
     justify-content: start; /* Center align the arrows under the photo */
     width: 100%;
-    margin-top: 20px; /* Add some space between the photo and the arrows */
-    margin-left: 200px;
+    margin-top: 50px; /* Add some space between the photo and the arrows */
+    margin-left: 300px;
 }
 
 
@@ -51,10 +51,11 @@
     .arrows {
       display: flex;
       flex-direction: row;
-      gap: 50px;
+      gap: 150px;
       padding-bottom: 10px;
       .arrow-link {
         position: relative;
+        
         
         .hover-thumbnail {
           display: none;
@@ -62,24 +63,25 @@
           z-index: 1;
     
           img {
-            width: 100px;
-            height: 90px;
+            width: 300px;
+            height: 300px;
+            object-fit: contain;
           }
         }
     
         &.arrow-left:hover .hover-thumbnail {
           &.thumbnail-left {
             display: block;
-            top: -80px;
-            left: 0px;
+            top: -180px;
+            right: -75px;
           }
         }
     
         &.arrow-right:hover .hover-thumbnail {
           &.thumbnail-right {
             display: block;
-            top: -80px; /* Adjust the vertical distance for thumbnail-right */
-            left: -55px;
+            top: -180px; /* Adjust the vertical distance for thumbnail-right */
+            left: -75px;
           }
         }
       }
