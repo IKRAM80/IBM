@@ -38,11 +38,51 @@ get_header();
             echo    '<h4 class="objectif">' . $objectif . '</h4>
                     </div>';
     ?>
+          
+                   
               <aside class="projet-photo">
                 <!-- Afficher le texte alternatif de la photographie -->
                 <?php $photo_alt = get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true);  ?>
                 <img class="img-box" src="<?php the_post_thumbnail_url();  ?>" alt="<?php echo $photo_alt; ?>">
               </aside>
+        <div class="under-photo">
+              <div class="preview">                    
+                        <?php
+                        // Récupère les objets des articles précédent et suivant
+                        $previouspost = get_previous_post();
+                        $nextpost = get_next_post();
+                        ?>
+                        <div class="arrows">
+                            <?php if ($previouspost) : ?>                                
+                                <?php
+                                // Récupère le champ personnalisé 'ralisation' pour l'article précédent (si nécessaire)
+                                     $previous_photo = get_field('realisation', $previouspost->ID); ?>
+                                <a href="<?php echo get_permalink($previouspost); ?>" class="arrow-link arrow-left">
+                                    <!-- Affiche une flèche pour l'article précédent -->
+                                    <img class="arrow arrow-left" src="<?php echo get_stylesheet_directory_uri(); ?>/images/arrow-left.svg" alt="Arrow for previous picture">
+                                    <div class="hover-thumbnail thumbnail-left">
+                                       <!-- Affiche la miniature de l'article précédent -->
+                                       <img src="<?php echo get_the_post_thumbnail_url($previouspost->ID, array(81, 71)) ?>" alt="Photo précédente">
+                                       <!--Affiche la miniature de la photo du post précédent avec une taille de 81x71 px-->
+                                    </div>
+                                </a>
+                            <?php endif; ?>
+                            <?php if ($nextpost) : ?>
+                                <?php 
+                                // Récupère le champ personnalisé 'photo' pour l'article suivant (si nécessaire)
+                                    $next_photo = get_field('realisation', $nextpost->ID); ?>
+                                <a href="<?php echo get_permalink($nextpost); ?>" class="arrow-link arrow-right">
+                                    <!-- Affiche une flèche pour l'article suivant -->
+                                    <img class="arrow arrow-right" src="<?php echo get_stylesheet_directory_uri(); ?>/images/arrow-right.svg" alt="Arrow for next picture">
+                                    <div class="hover-thumbnail thumbnail-right">
+                                        <!-- Affiche la miniature de l'article suivant -->
+                                        <img src="<?php echo get_the_post_thumbnail_url($nextpost->ID, array(81, 71)) ?>" alt="Photo suivante">
+                                    </div>
+                                </a>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+        </div>
             </article>
 
             <article class="def-projet">

@@ -25,6 +25,7 @@ add_action( 'wp_enqueue_scripts', 'chld_thm_cfg_parent_css', 10 );
 
 function enqueue_child_theme_styles() {
     wp_enqueue_style( 'single-projet', get_stylesheet_directory_uri() . '/css/single-projet.css' );
+    wp_enqueue_script('script', get_stylesheet_directory_uri() . '/scripts.js', array('jquery'), null, true);
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_child_theme_styles' );
 

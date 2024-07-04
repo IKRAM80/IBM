@@ -28,6 +28,64 @@
     width: 50%;
 }
 
+.under-photo {
+    display: flex;
+    justify-content: start; /* Center align the arrows under the photo */
+    width: 100%;
+    margin-top: 20px; /* Add some space between the photo and the arrows */
+    margin-left: 200px;
+}
+
+
+.preview {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center;
+    height: auto;
+
+    @media (max-width: 1024px) {
+        display: none;
+    }
+
+    .arrows {
+      display: flex;
+      flex-direction: row;
+      gap: 50px;
+      padding-bottom: 10px;
+      .arrow-link {
+        position: relative;
+        
+        .hover-thumbnail {
+          display: none;
+          position: absolute;
+          z-index: 1;
+    
+          img {
+            width: 100px;
+            height: 90px;
+          }
+        }
+    
+        &.arrow-left:hover .hover-thumbnail {
+          &.thumbnail-left {
+            display: block;
+            top: -80px;
+            left: 0px;
+          }
+        }
+    
+        &.arrow-right:hover .hover-thumbnail {
+          &.thumbnail-right {
+            display: block;
+            top: -80px; /* Adjust the vertical distance for thumbnail-right */
+            left: -55px;
+          }
+        }
+      }
+    }
+  }
+
 .def-projet, .techno{
     margin: 12vh 1.2em;
     width: 87vw;
