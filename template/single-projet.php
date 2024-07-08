@@ -105,8 +105,8 @@ get_header();
 
                 // Affichage vidéo
                 if(!empty($video)) {
-                  echo    '<video class="light-box" width= "450" autoplay muted loop src="'.$video.'"></video>';
-                };
+                    echo    '<video class="light-box" width= "450" autoplay muted loop src="'.$video.'"></video>';
+                  };
                 echo '</div>';
                 if (!empty($pointTech)):
                 echo    '<div class="parag"><p>Point technique à résoudre:<br>
