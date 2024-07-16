@@ -40,3 +40,13 @@ function custom_post_type_template($single_template) {
     return $single_template;
 }
 add_filter('single_template', 'custom_post_type_template');
+
+
+function add_elements_menus($items, $args) {
+    
+    if ($args->theme_location == 'footer') {
+        $items .= '<li class="widget widget_block widget_text"> Tout droit réservé. Site réalisé par ikram-dev. </li>'; // Ajoutez un autre élément au menu de pied de page
+    }
+    return $items;
+}
+add_filter('wp_nav_menu_items', 'add_elements_menus', 10, 2);
