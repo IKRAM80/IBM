@@ -126,7 +126,7 @@ get_header();
                     </div>';
                 endif;
 
-                echo '<div class="col-right" ><h4>Tehnologies utilisés</h4>';
+                echo '<div class="col-right" ><h4>Tehnologies utilisées</h4>';
                 $types = get_post_meta($projet_id, 'technologies', true);
                 if (is_array($types)) {
                   foreach ($types as $key => $value) {
